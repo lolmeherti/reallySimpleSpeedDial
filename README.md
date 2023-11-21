@@ -56,3 +56,6 @@ Should the favicon fail to autoresolve, you can provide the third property "favi
     ];
 </script>
 ```
+## Screenshot
+
+![Speed Dial](https://github.com/lolmeherti/reallySimpleSpeedDial/blob/main/speeddial.png)
