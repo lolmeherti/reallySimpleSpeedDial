@@ -23,7 +23,7 @@ Open the index.html file in a text editor/IDE of your choice
 
 To add new links, edit the links array in the script tag of index.html:
 
-<script>
+`js<script>
     const links = [
       { 
         src: "https://www.google.com", 
@@ -34,12 +34,12 @@ To add new links, edit the links array in the script tag of index.html:
         name: "Your Site" 
       },
     ];
-</script>
+</script>`
 
 The speed dial will try to autoresolve the icon by appending /favicon.ico to the link provided in the src property. 
 Should the favicon fail to autoresolve, you can provide the third property "favicon", and pass a custom favicon url.
 
-<script>
+`<script>
     const links = [
       { 
         src: "https://www.google.com", 
@@ -51,4 +51,4 @@ Should the favicon fail to autoresolve, you can provide the third property "favi
         favicon: "https://www.your-site.com/custom-icon.ico"
       },
     ];
-</script>
+</script>`
