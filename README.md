@@ -12,7 +12,7 @@ Speed Dial is a sleek and user-friendly web application designed to provide quic
 - HTML
 - CSS
 - JavaScript
-- Flowbite Framework
+- Flowbite CDN
 
 ## Installation
 
