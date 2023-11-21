@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speed Dial</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet"/>
+
+    <style>
+        .imageSize {
+            max-width: 32px;
+            max-height: 32px;
+            min-height: 32px;
+            min-width: 32px;
+        }
+
+        .standardCard {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #2C2C30;
+        }
+
+        .standardCard:hover {
+            background: #3B3B3D;
+        }
+    </style>
+
+</head>
+
+<script>
+    const links = [
+        { src: "https://www.google.com", name: "Google" },
+        { src: "https://www.youtube.com", name: "YouTube" },
+        { 
+            src: "https://www.marketwatch.com/", 
+            name: "MarketWatch",
+            favicon: "https://mw4.wsj.net/mw5/content/logos/favicon.ico"
+        },
+    ];
+</script>
+ 
+<body style="background: #424141;">
+
+<h1 class="text-center font-bold text-6xl text-gray-200 p-5">
+    Speed Dial
+</h1>
+
+<div class="pb-48 bg-gray-400 rounded-b-lg" style="background: #323131;">
+    <div class="flex flex-wrap" id="main_container">
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+
+<script>
+    window.onload = generateLinks(links, 'main_container')
+
+    function generateLinks(links, containerId) {
+        const container = document.getElementById(containerId);
+
+        for (let link of links) {
+            const aTag = document.createElement('a');
+            aTag.href = link.src;
+            aTag.className = "mt-4 ml-4"
+
+            const innerDiv = document.createElement('div');
+            innerDiv.className = "border rounded-lg shadow border-gray-500 text-center items-center p-2 standardCard";
+
+            const img = document.createElement('img');
+            img.className = "p-2 imageSize";
+            img.alt = link.name + 'alt image';
+            img.src = link.favicon ? link.favicon : `${link.src}/favicon.ico`;
+
+            const pTag = document.createElement('p');
+            pTag.className = "text-xl font-bold tracking-tight text-white";
+            pTag.textContent = link.name;
+
+            innerDiv.appendChild(img);
+            innerDiv.appendChild(pTag);
+            aTag.appendChild(innerDiv);
+            container.appendChild(aTag);
+        }
+
+        return true;
+    }
+
+</script>
+
+</body>
+</html>
